@@ -1,0 +1,14 @@
+{
+    "brand" : "Sodium Theme",
+    "logo" : "logo.png",
+    "links" : [
+        {
+            "title" : "Инструкция по установке",
+            "href" : "#page"
+        },
+        {
+            "title" : "Обратная связь",
+            "href" : "#contact"
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "email" : "it@it-projects.info",
+    "components" : [
+        "cover",
+        "page",
+        "contact"
+    ]
+}

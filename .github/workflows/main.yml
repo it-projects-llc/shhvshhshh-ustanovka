@@ -1,0 +1,29 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: recursive
+    - uses: jakejarvis/hugo-build-action@v0.57.2
+      name: Rebuild
+      with:
+        args: --minify -s doc-src/
+    - name: Copy website to docs/
+      run: cp -a doc-src/public/. docs
+    - uses: matheusalbino/git-commit@v1.0.1
+      name: Commit updates
+      with:
+        user-name: Marc Demo (from Github Actions)
+        user-email: i18n-bot@it-projects.info
+        message: |
+          :alien: recompile docs
+          
+          Sent from Github Actions (see .github/workflows/main.yml )
+        github-token: ${{ secrets.MY_GITHUB_TOKEN }}
